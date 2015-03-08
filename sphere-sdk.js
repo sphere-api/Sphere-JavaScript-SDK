@@ -1,8 +1,9 @@
 window.SphereSDK || (function(window) {
 
   window.SphereSDK = (function(document) {
-    var baseUrl = 'https://www.sphere.com/#/';
-//    var baseUrl = 'http://sphere-19001-stg-nydc1.nydc1.outbrain.com:8080/Sphere/homepage/#/';
+//    var baseUrl = 'https://www.sphere.com/#/';
+    var baseUrl = 'http://127.0.0.1:9000/#/';
+
     var elmId = 'sphere_auth_iframe';
     var currentCallback = null;
 
@@ -21,9 +22,6 @@ window.SphereSDK || (function(window) {
       height = height || 0;
       var left = (window.innerWidth / 2) - (width / 2);
       var top = (window.innerHeight / 2) - (height / 2);
-
-      var windowObjectReference = window.open(url, 'Sphere Auth', 'height=' + height + ',width=' + width);
-      return;
 
       var iframe = document.createElement('iframe');
       iframe.style.width = width + 'px';
@@ -79,7 +77,7 @@ window.SphereSDK || (function(window) {
     return {
 
       isAuthenticated: function(callback) {
-        var url = baseUrl + 'account/auth?contentOnly=true';
+        var url = baseUrl + 'isAuthenticated';
         createPopup(url, false);
 
         if(callback) {
@@ -88,7 +86,7 @@ window.SphereSDK || (function(window) {
       },
 
       login: function(callback) {
-        var url = baseUrl + 'account/login?contentOnly=true';
+        var url = baseUrl + 'login';
         createPopup(url, true, 540, 640);
 
         if(callback) {
@@ -97,7 +95,7 @@ window.SphereSDK || (function(window) {
       },
 
       logout: function(callback) {
-        var url = baseUrl + 'account/logout?contentOnly=true';
+        var url = baseUrl + 'logout';
         createPopup(url, false);
 
         if(callback) {
