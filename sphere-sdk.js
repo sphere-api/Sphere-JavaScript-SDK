@@ -4,6 +4,7 @@ window.SphereSDK || (function(window) {
 //    var baseUrl = 'https://www.sphere.com/#/';
     var baseUrl = 'http://127.0.0.1:9000/#/';
 
+    var currentWindow = null;
     var elmId = 'sphere_auth_iframe';
     var currentCallback = null;
 
@@ -17,7 +18,7 @@ window.SphereSDK || (function(window) {
       iframe.style.top = top + 'px';
     };
 
-    var createPopup = function(url, isVisible, width, height) {
+    var createIframe = function(url, isVisible, width, height) {
       width = width || 0;
       height = height || 0;
       var left = (window.innerWidth / 2) - (width / 2);
@@ -52,10 +53,24 @@ window.SphereSDK || (function(window) {
       window.addEventListener('resize', resizeEvent);
     };
 
-    var removePopup = function() {
+    var removeIframe = function() {
       var elm = document.getElementById(elmId);
-      elm.parentNode.removeChild(elm);
+      if(elm) {
+        elm.parentNode.removeChild(elm);
+      }
       window.removeEventListener('resize', resizeEvent);
+    };
+
+    var openWindow = function(url, width, height) {
+      width = width || 0;
+      height = height || 0;
+      var left = (window.innerWidth / 2) - (width / 2);
+      var top = (window.innerHeight / 2) - (height / 2);
+
+      currentWindow = window.open(url, 'Sphere', 'width=' + width + ', height=' + height + ', left=' + left + ', top=' + top);
+      window.setTimeout(function() {
+        currentWindow.postMessage('ping', '*');
+      }, 250);
     };
 
     // Create IE + others compatible event handler
@@ -65,20 +80,29 @@ window.SphereSDK || (function(window) {
 
     // Listen to message from child window
     eventer(messageEvent, function(e) {
-      var data = JSON.parse(event.data);
+      var data = JSON.parse(e.data);
+
+      // Triggering active callback
       if(currentCallback) {
         currentCallback(data);
-        removePopup();
         currentCallback = null;
       }
-//      console.log('parent received message!:  ',e.data);
-    },false);
+
+      // Closing window or active iframe
+      if(currentWindow) {
+        currentWindow.close();
+      }
+      else {
+        removeIframe();
+      }
+
+    }, false);
 
     return {
 
       isAuthenticated: function(callback) {
         var url = baseUrl + 'isAuthenticated';
-        createPopup(url, false);
+        createIframe(url, false);
 
         if(callback) {
           currentCallback = callback;
@@ -87,7 +111,16 @@ window.SphereSDK || (function(window) {
 
       login: function(callback) {
         var url = baseUrl + 'login';
-        createPopup(url, true, 540, 640);
+        openWindow(url, 540, 640);
+
+        if(callback) {
+          currentCallback = callback;
+        }
+      },
+
+      register: function(callback) {
+        var url = baseUrl + 'register';
+        openWindow(url, 540, 640);
 
         if(callback) {
           currentCallback = callback;
@@ -96,7 +129,7 @@ window.SphereSDK || (function(window) {
 
       logout: function(callback) {
         var url = baseUrl + 'logout';
-        createPopup(url, false);
+        createIframe(url, false);
 
         if(callback) {
           currentCallback = callback;
