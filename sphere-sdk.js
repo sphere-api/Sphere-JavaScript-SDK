@@ -111,7 +111,7 @@ window.SphereSDK || (function(window) {
 
       login: function(callback) {
         var url = baseUrl + 'login';
-        openWindow(url, 540, 640);
+        openWindow(url, 380, 600);
 
         if(callback) {
           currentCallback = callback;
@@ -120,7 +120,7 @@ window.SphereSDK || (function(window) {
 
       register: function(callback) {
         var url = baseUrl + 'register';
-        openWindow(url, 540, 640);
+        openWindow(url, 380, 600);
 
         if(callback) {
           currentCallback = callback;
