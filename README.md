@@ -21,7 +21,7 @@ Sphere SDK has a few methods that could help you authenticate user, each one of 
 ### isAuthenticated
 Check if user is authenticated in Sphere.
 
-** Example: **
+**Example**
 ```
 SphereSDK.isAuthenticated(function(res) {
     if(res.success) {
@@ -36,7 +36,7 @@ SphereSDK.isAuthenticated(function(res) {
 ### login
 Opens a login popup for Sphere.
 
-** Example: **
+**Example**
 ```
 SphereSDK.login(function(res) {
     if(res.success) {
@@ -48,7 +48,7 @@ SphereSDK.login(function(res) {
 ### register
 Opens a register popup for Sphere.
 
-** Example: **
+**Example**
 ```
 SphereSDK.register(function(res) {
     if(res.success) {
@@ -60,7 +60,7 @@ SphereSDK.register(function(res) {
 ### logout
 Logout a user from Sphere.
 
-** Example: **
+**Example**
 ```
 SphereSDK.logout(function(res) {
     if(res.success) {
