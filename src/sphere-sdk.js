@@ -70,7 +70,7 @@ window.SphereSDK || (function(window) {
       currentWindow = window.open(url, 'Sphere', 'width=' + width + ', height=' + height + ', left=' + left + ', top=' + top);
       window.setTimeout(function() {
         currentWindow.postMessage('ping', '*');
-      }, 1000);
+      }, 2500);
     };
 
     // Create IE + others compatible event handler
