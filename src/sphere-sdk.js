@@ -64,13 +64,13 @@ window.SphereSDK || (function(window) {
     var openWindow = function(url, width, height) {
       width = width || 0;
       height = height || 0;
-      var left = (window.innerWidth / 2) - (width / 2);
-      var top = (window.innerHeight / 2) - (height / 2);
+      var left = (screen.width / 2) - (width / 2);
+      var top = (screen.height / 2) - (height / 2);
 
       currentWindow = window.open(url, 'Sphere', 'width=' + width + ', height=' + height + ', left=' + left + ', top=' + top);
       window.setTimeout(function() {
         currentWindow.postMessage('ping', '*');
-      }, 250);
+      }, 1000);
     };
 
     // Create IE + others compatible event handler
