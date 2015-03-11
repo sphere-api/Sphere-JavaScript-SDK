@@ -69,6 +69,6 @@ SphereSDK.logout(function(res) {
 });
 ```
 
-------------
-# Demo
-You may find a demo app in the "demo" folder within this repository with a working example.
+---
+## Demo
+You may find a working example under the "demo" folder.
