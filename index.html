@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Sphere-sdk : Sphere&#39;s Javascript SDK for developers">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Sphere-sdk</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/sphere-api/sphere-sdk">View on GitHub</a>
+
+          <h1 id="project_title">Sphere-sdk</h1>
+          <h2 id="project_tagline">Sphere&#39;s Javascript SDK for developers</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/sphere-api/sphere-sdk/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/sphere-api/sphere-sdk/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="sphere-javascript-sdk" class="anchor" href="#sphere-javascript-sdk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sphere Javascript SDK</h1>
+
+<p>The official Javascript SDK for integrating Sphere into your webapp or website.</p>
+
+<h1>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started</h1>
+
+<p>Checkout the latest branch of this repository in your VM:</p>
+
+<div class="highlight highlight-bash"><pre>git clone https://github.com/sphere-api/sphere-sdk.git
+<span class="pl-c1">cd</span> sphere-sdk</pre></div>
+
+<h1>
+<a id="how-to-include" class="anchor" href="#how-to-include" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to include</h1>
+
+<p>In order to use the JavaScript SDK you must include the following script tag in your HTML document</p>
+
+<pre><code>&lt;script type="text/javascript" src="src/sphere-sdk.min.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Once included, your window object will contain a new global Object named <strong>SphereSDK</strong>.</p>
+
+<h1>
+<a id="authentication-methods" class="anchor" href="#authentication-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authentication Methods</h1>
+
+<p>Sphere SDK has a few methods that could help you authenticate user, each one of them may receive a callback function.</p>
+
+<h3>
+<a id="isauthenticated" class="anchor" href="#isauthenticated" aria-hidden="true"><span class="octicon octicon-link"></span></a>isAuthenticated</h3>
+
+<p>Check if user is authenticated in Sphere.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>SphereSDK.isAuthenticated(function(res) {
+    if(res.success) {
+        console.log('User is authenticated');
+    }
+    else {
+        console.log('User is not authenticated');
+    }
+});
+</code></pre>
+
+<h3>
+<a id="login" class="anchor" href="#login" aria-hidden="true"><span class="octicon octicon-link"></span></a>login</h3>
+
+<p>Opens a login popup for Sphere.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>SphereSDK.login(function(res) {
+    if(res.success) {
+        console.log('User logged in!');
+    }
+});
+</code></pre>
+
+<h3>
+<a id="register" class="anchor" href="#register" aria-hidden="true"><span class="octicon octicon-link"></span></a>register</h3>
+
+<p>Opens a register popup for Sphere.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>SphereSDK.register(function(res) {
+    if(res.success) {
+        console.log('User registered!');
+    }
+});
+</code></pre>
+
+<h3>
+<a id="logout" class="anchor" href="#logout" aria-hidden="true"><span class="octicon octicon-link"></span></a>logout</h3>
+
+<p>Logout a user from Sphere.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>SphereSDK.logout(function(res) {
+    if(res.success) {
+        console.log('User logged out');
+    }
+});
+</code></pre>
+
+<hr>
+
+<h2>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h2>
+
+<p>You may find a working example under the "demo" folder.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Sphere-sdk maintained by <a href="https://github.com/sphere-api">sphere-api</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
