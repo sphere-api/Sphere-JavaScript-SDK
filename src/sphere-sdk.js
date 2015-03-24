@@ -1,8 +1,7 @@
 window.SphereSDK || (function(window) {
 
   window.SphereSDK = (function(document) {
-//    var baseUrl = 'https://www.sphere.com/#/';
-    var baseUrl = 'http://127.0.0.1:9000/#/';
+    var baseUrl = 'https://www.sphere.com/auth/#/';
 
     var currentWindow = null;
     var elmId = 'sphere_auth_iframe';
