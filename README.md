@@ -11,7 +11,7 @@ cd sphere-sdk
 # How to include
 In order to use the JavaScript SDK you must include the following script tag in your HTML document
 ```
-<script type="text/javascript" src="src/sphere-sdk.min.js"></script>
+<script type="text/javascript" src="dist/sphere-sdk.min.js"></script>
 ```
 Once included, your window object will contain a new global Object named **SphereSDK**.
 
