@@ -16,10 +16,10 @@ In order to use the JavaScript SDK you must include the following script tag in 
 Once included, your window object will contain a new global Object named **SphereSDK**.
 
 # Authentication Methods
-Sphere SDK has a few methods that could help you authenticate user, each one of them may receive a callback function.
+Sphere SDK has a few methods that could help you to authenticate user, each one of them may receive a callback function.
 
 ### isAuthenticated
-Check if user is authenticated in Sphere.
+Check if a user is authenticated to Sphere.
 
 **Example**
 ```
