@@ -1,11 +1,14 @@
 {
   "name": "SphereSDK",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.5",
     "load-grunt-tasks": "~0.1.0",
-    "grunt-contrib-uglify": "~0.5.0"
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-release": "^0.12.0",
+    "grunt-shell": "^0.7.0",
+    "connect-modrewrite": "^0.7.6"
   },
   "engines": {
     "node": ">=0.8.0"

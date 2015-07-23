@@ -1,0 +1,27 @@
+{
+  "name": "sphere-js-sdk",
+  "version": "0.0.2",
+  "homepage": "https://github.com/sphere-api/Sphere-JavaScript-SDK",
+  "authors": [
+    "Sphere team",
+    "Daniel Sternlicht <dsternlicht@outbrain.com>"
+  ],
+  "description": "Sphere JavaScript official SDK",
+  "main": [
+    "src/sphere-sdk.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sphere-api/Sphere-JavaScript-SDK.git"
+  },
+  "keywords": [
+    "Sphere",
+    "SDK",
+    "JavaScript"
+  ],
+  "ignore": [
+    "node_modules"
+  ],
+  "license": "MIT",
+  "private": true
+}
