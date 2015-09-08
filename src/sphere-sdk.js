@@ -79,6 +79,10 @@ window.SphereSDK || (function(window) {
 
     // Listen to message from child window
     eventer(messageEvent, function(e) {
+      if(!e.data || typeof e.data !== 'string') {
+        return;
+      }
+      
       var data = JSON.parse(e.data);
 
       // Triggering active callback
